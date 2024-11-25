@@ -52,3 +52,15 @@ jobs:
         with:
           name: production_dist
           path: dist/
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    name: Deploy
+
+    needs:
+      - build
+
+    steps:
+      - name: Trigger Render
+        run: curl -X GET ${{ RENDER_HOOK }}
