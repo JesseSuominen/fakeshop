@@ -23,3 +23,32 @@ jobs:
 
       - name: Run the Frontend Tests
         run: npm run test:ci
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    name: Production Build
+
+    needs:
+      - test
+
+    steps:
+      - name: Fetch code
+        uses: actions/checkout@v4.2.2
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: production_dist
+          path: dist/
