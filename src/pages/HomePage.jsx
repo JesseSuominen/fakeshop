@@ -20,7 +20,7 @@ const HomePage = () => {
       <br />
       <StyledHomeContainer>
         <p>This site is Powered by GitHub Workflows for automated CI/CD</p>
-        <p>Hosted on Render</p>
+        <p>Hosted on Vercel</p>
       </StyledHomeContainer>
     </>
   );
