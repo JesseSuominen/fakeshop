@@ -1,0 +1,16 @@
+a {
+  font-weight: 500;
+  color: #ececf0;
+  text-decoration: inherit;
+  font-family: cursive;
+}
+a:hover {
+  color: #d3d4e4;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  overflow-x: hidden;
+}

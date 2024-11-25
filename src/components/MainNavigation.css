@@ -1,0 +1,25 @@
+.header {
+  max-width: 60rem;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ccc;
+  width: 400px;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.list a {
+  text-decoration: none;
+}
+
+.list a:hover,
+.list a.active {
+  text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Frontend Tests
+
+    steps:
+      - name: Fetch code
+        uses: actions/checkout@v4.2.2
+
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Run the Frontend Tests
+        run: npm run test:ci
